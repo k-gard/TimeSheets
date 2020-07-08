@@ -1,0 +1,18 @@
+﻿@model Timesheets.Models.Project
+
+@{
+    ViewData["Title"] = "TimesheetFullProject";
+}
+
+<h1>Unable to delete</h1>
+
+<h3>There are Timesheets Related to this Project.</h3>
+<div>
+    
+
+    <form>
+        <input type="hidden" asp-for="Id" />
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
+

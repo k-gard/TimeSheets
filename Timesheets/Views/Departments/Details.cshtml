@@ -1,0 +1,74 @@
+﻿@model Timesheets.Models.DepartmentDetail
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Department</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.department.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.department.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.department.DepartmentHead)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.department.DepartmentHead.FirstName) @Html.DisplayFor(model => model.department.DepartmentHead.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            Owned Projects
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Ownedprojects.Count
+        </dd>
+
+
+        @for (var i = 0; i < Model.Ownedprojects.Count; i++)
+        {
+            <dt class="col-sm-2">
+                Owned project @(i + 1)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Ownedprojects[i].Name)
+            </dd>
+
+        }
+
+
+        <dt class="col-sm-2">
+            Project participations
+        </dt>
+
+
+        <dd class="col-sm-10">
+            @Model.Participatingprojects.Count
+        </dd>
+
+
+        @for (var i = 0; i < Model.Participatingprojects.Count; i++)
+        {
+            <dt class="col-sm-2">
+                Project participation @(i + 1)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Participatingprojects[i].Project.Name)
+            </dd>
+
+        }
+
+
+
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.department.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

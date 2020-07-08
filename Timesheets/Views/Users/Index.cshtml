@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Timesheets.Models.MyUser> 
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Users</h1>
+
+<p> 
+    <a  asp-area="Identity" asp-page="/Account/Register">Register New User</a>
+    
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.FirstName)</td>
+            <td>@Html.DisplayNameFor(model => model.LastName)</td>
+            <td>@Html.DisplayNameFor(model => model.CostPerHour)</td>
+            <td>@Html.DisplayNameFor(model => model.Department)</td>
+            <td>@Html.DisplayNameFor(model => model.Manager)</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.CostPerHour</td>
+            <td>
+            @if (item.Department != null)
+            {
+            @item.Department.Name
+            }</td>
+            <td>
+                @if (item.Manager != null)
+                {
+                    @item.Manager.FirstName
+                }
+
+                @if (item.Manager != null)
+                {
+                    @item.Manager.LastName
+                }
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+
+        }
+    </tbody>
+</table>

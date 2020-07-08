@@ -1,0 +1,84 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable<Timesheets.Models.TimesheetEntry>
+@inject SignInManager<MyUser> SignInManager
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Timesheet Entries</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RelatedProject.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RelatedUser.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RelatedUser.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateCreated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoursWorked)
+            </th>
+            <th>
+                Total Cost
+            </th>
+
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RelatedProject.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RelatedUser.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RelatedUser.LastName)
+            </td>
+            <td>
+                @Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.DateCreated))
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoursWorked)
+            </td>
+            <td>
+                @(item.HoursWorked * item.RelatedUser.CostPerHour)
+            </td>
+
+
+            <td>
+                @{
+                if(SignInManager.Context.User.IsInRole("Admin")||SignInManager.Context.User.IsInRole("Manager"))
+                {
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>  <text>|</text>
+
+                }
+                }
+
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                @{
+                if(SignInManager.Context.User.IsInRole("Admin")||SignInManager.Context.User.IsInRole("Manager"))
+                {
+                <text>|</text><a asp-action="Delete" asp-route-id="@item.Id">Delete</a> <text>|</text>
+
+                }
+                }
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

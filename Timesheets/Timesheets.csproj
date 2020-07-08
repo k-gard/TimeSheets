@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UserSecretsId>aspnet-Timesheets-64EE566B-D24F-447E-A871-3F79DB65767B</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20191213112755_initial43.cs" />
+    <Compile Remove="Data\Migrations\20191213112755_initial43.Designer.cs" />
+    <Compile Remove="Data\Migrations\20191213113141_initial47.cs" />
+    <Compile Remove="Data\Migrations\20191213113141_initial47.Designer.cs" />
+    <Compile Remove="Data\Migrations\20191213113335_initial49.cs" />
+    <Compile Remove="Data\Migrations\20191213113335_initial49.Designer.cs" />
+    <Compile Remove="Data\Migrations\20191213113404_initial41.cs" />
+    <Compile Remove="Data\Migrations\20191213113404_initial41.Designer.cs" />
+    <Compile Remove="Data\Migrations\20191213113614_initial411.cs" />
+    <Compile Remove="Data\Migrations\20191213113614_initial411.Designer.cs" />
+    <Compile Remove="Migrations\20191213170903_INitial23.cs" />
+    <Compile Remove="Migrations\20191213170903_INitial23.Designer.cs" />
+    <Compile Remove="Migrations\20191213173304_INitial23243.cs" />
+    <Compile Remove="Migrations\20191213173304_INitial23243.Designer.cs" />
+    <Compile Remove="Migrations\20191213173354_INitial232433.cs" />
+    <Compile Remove="Migrations\20191213173354_INitial232433.Designer.cs" />
+    <Compile Remove="Migrations\20191213193151_INitial2324336.cs" />
+    <Compile Remove="Migrations\20191213193151_INitial2324336.Designer.cs" />
+    <Compile Remove="Migrations\20191213200334_INitial23243362.cs" />
+    <Compile Remove="Migrations\20191213200334_INitial23243362.Designer.cs" />
+    <Compile Remove="Migrations\20191213200521_INitial2324336222.cs" />
+    <Compile Remove="Migrations\20191213200521_INitial2324336222.Designer.cs" />
+    <Compile Remove="Migrations\20191213200625_INitial23222.cs" />
+    <Compile Remove="Migrations\20191213200625_INitial23222.Designer.cs" />
+    <Compile Remove="Migrations\20191213200710_INitial232222.cs" />
+    <Compile Remove="Migrations\20191213200710_INitial232222.Designer.cs" />
+    <Compile Remove="Migrations\20191213204812_1312192248.cs" />
+    <Compile Remove="Migrations\20191213204812_1312192248.Designer.cs" />
+    <Compile Remove="Migrations\20191213205859_2258131219.cs" />
+    <Compile Remove="Migrations\20191213205859_2258131219.Designer.cs" />
+    <Compile Remove="Migrations\20191213210803_1312192307.cs" />
+    <Compile Remove="Migrations\20191213210803_1312192307.Designer.cs" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Data\Migrations\" />
+  </ItemGroup>
+
+</Project>
